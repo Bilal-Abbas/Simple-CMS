@@ -1,0 +1,44 @@
+<% text = "This is my text and now I am going to set it by using text helper and here us the line break./n/n It is a paragraph on to which I am going to apply the text helper./n Text helpers are sometime very amazing but it is my first time to use them" %>
+
+<h2> word_wrap </h2>
+<%= word_wrap(text, :line_width => 30) %>
+</hr>
+
+<h2> Simple Formate </h2>
+<%= simple_format(text) %> 
+</hr>
+
+
+<h2> Simple_formate + word_wrap </h2>
+<%= simple_format(word_wrap(text, :line_width =>40)) %>
+</hr>
+
+<h2> Truncate </h2>
+<%= truncate(text, :length => 40, :omission => "...") %>
+</hr>
+
+<h2> Excerpt </h2>
+<%= excerpt(text, "helper", :radius => 8, :omission => "...") %>
+
+</hr>
+
+<h2> Highlight </h2>
+<%= highlight(text, "text helper") %>
+
+</hr>
+
+
+<h2>Highlight in different manner </h2>
+<%= highlight(text, ['text', 'it is'], :highlight => '<em>\1</em>') %>
+</hr>
+
+<h2> Plurals </h2>
+<%= "kinf".pluralize %></br>
+<%= "ox".pluralize %></br>
+<%= "shelf".pluralize %></br>
+
+<h2> Cycle </h2>
+<% 6.times do %>
+	<%= cycle('bilal', 'abbas') %> </br>
+
+<% end %>

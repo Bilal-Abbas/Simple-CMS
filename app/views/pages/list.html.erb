@@ -1,0 +1,39 @@
+<% @page_title = "Pages" %>
+<%= link_to('<<< Back to Subjects', {:controller => 'subjects', :action => 'index'}) %>
+
+<div class="page index">
+  <br/>
+  <h2>Pages</h2>
+
+  <%= link_to(image_tag("plus_sign.png", :size => '11x11', :alt => "+") + " Add New Page", {:action => 'new'}, :class => 'action new') %>
+
+  <table class="listing" summary="page list">
+    <tr class="header">
+      <th>&nbsp;</th>
+      <th>Subject</th>
+      <th>Page</th>
+      <th>Position</th>
+      <th>Permalink</th>
+      <th>Visible</th>
+      <th>Actions</th>
+    </tr>
+    <% @pages.each do |page| %>
+    <tr class="<%= cycle('even', 'odd')%>" >
+      <td><%= page.id %></td>
+      <td><%= page.subject.name if page.subject %></td>
+      <td><%= page.name %></td>
+       <td><%= page.position %></td>
+      <td><%= page.permalink %></td>
+
+      <td class="center"><%= status_tag(page.visible) %></td>
+
+       <td class="actions">
+        <%= link_to("View Sections", {:controller => 'sections', :page_id => page.id}, :class => 'action show') %>
+        <%= link_to("Show", {:action => 'show', :id => page.id}, :class => 'action show') %>
+        <%= link_to("Edit", {:action => 'edit', :id => page.id}, :class => 'action edit') %>
+        <%= link_to("Delete", {:action => 'delete', :id => page.id}, :class => 'action delete') %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>

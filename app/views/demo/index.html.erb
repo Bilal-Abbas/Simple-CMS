@@ -1,0 +1,27 @@
+
+<h1>Demo#index</h1>
+<p>index wali file</p>
+<br>
+
+<a href="/demo/hello">Hello Page </a><br>
+<%= link_to('Hello Page',{:action => 'hello'}) %>
+<br>
+<%= link_to('Hello Page with Params',{:action => 'hello',:page => 0, :id =>1, :name => 'Hello Page'}) %>
+<br/>
+
+
+<%= link_to('Roar','#', :onclick =>"jsRoar('Bilal Abbas');") %>
+<br />
+
+<%= javascript_tag("jsRoar('Abbas Awan');") %>
+<br />
+
+
+
+
+
+
+ID: <%= params[:id].to_i + 1 %><br/>
+Visited PageID: <%= @idindex %> <br/>
+Next Page: <%= params[:pageindex].to_i + 1 %><br/>
+Name: <%= params[:name] %><br>

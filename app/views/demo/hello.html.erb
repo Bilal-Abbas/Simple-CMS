@@ -1,0 +1,26 @@
+<h1>Demo#hello</h1>
+<p>Hello wali file</p>
+<hr>
+
+<% var = "2 X 1 ="%>
+<p> Table of Two </p>
+<% @array.each do |n| %>
+	<p> 2 x 1 = <%= n*2 %> </p>
+
+<% end %>
+<br>
+
+
+
+<a href="/demo/index">Index Page </a><br>
+<%= link_to('Index Page',{:action => 'index'}) %>
+<br>
+
+<%= link_to('Index Page with Params',{:action => 'index',:page => 1, :id =>1, :name => 'Index Page'}) %>
+
+<hr>
+
+ID: <%= params[:id] %><br/>
+Visited PageID: <%= @id  %> <br/>
+Page: <%= params[:page] %><br/>
+Name: <%= params[:name] %><br>

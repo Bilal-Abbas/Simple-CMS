@@ -1,0 +1,31 @@
+<% string1 = "<script>alert('Welcome...!');</script>".html_safe %>
+<% string2 = "<strong>Welcome to the site...!!! </strong>".html_safe %>
+
+
+<%#= raw(string1) %></br>
+<%#= raw(string2) %></br>
+
+
+
+<%= string1.html_safe? %><br/>
+<%= string2.html_safe? %><br/>
+
+
+<%#= string1 %><br/>
+<%#= string2 %><br/>
+
+
+
+<hr />
+
+
+<% simple_string = '<strong>Please</strong>Visit<a href=""> Us </a>' %>
+
+<%= strip_links(simple_string) %>
+<%= strip_tags(simple_string) %>
+
+
+<hr />
+<%= sanitize(string1) %><br />
+<%= sanitize(simple_string) %><br />
+<%= sanitize(simple_string, :tags => ['strong', 'em', 'a']) %> <br />

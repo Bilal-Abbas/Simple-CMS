@@ -1,0 +1,3 @@
+class Access < ApplicationRecord
+
+end

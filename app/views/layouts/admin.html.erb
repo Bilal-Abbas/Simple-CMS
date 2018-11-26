@@ -1,0 +1,43 @@
+<!Doctype html>
+<html>
+	<head>
+
+	<title> Simple CMS | <%= @page_title || "Admin" %> Admin</title>
+	<%= stylesheet_link_tag('application', :media => 'all') %>
+	<%= javascript_include_tag('public') %>
+
+	</head>
+
+	<body>
+		<div id="header">
+
+			<h2> Simple CMS Admin </h2>
+
+		</div>
+
+		<div id="main">
+
+				<% if !flash[:notice].blank? %>
+					<div class="notice">
+					<%= flash[:notice] %>
+					</div>
+				<% end %>
+
+			<div id="content">
+
+			<%= yield %>
+
+			</div>
+
+		</div>
+
+		<div id="footer">
+
+			<p id="copyright"> &copy; lynda.com / Bilal Abbas </p>
+
+		</div>
+
+
+	</body>
+
+</html>

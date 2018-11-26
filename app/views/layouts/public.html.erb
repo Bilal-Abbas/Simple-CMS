@@ -1,0 +1,47 @@
+<!Doctype html>
+<html>
+	<head>
+
+	<title> Simple CMS <%= " | #{@page_title}" if @page_title %> Admin</title>
+	<%= stylesheet_link_tag('application', :media => 'all') %>
+	<%= javascript_include_tag('public') %>
+
+	</head>
+
+	<body>
+		<div id="header">
+
+			<h2> Simple CMS</h2>
+
+		</div>
+
+		<div id="main">
+			<div id="navigation">
+
+				<%= render(:partial => "layouts/nevigation", :locals => {:subjects => @subjects}) %>
+
+			</div>
+			
+
+			<div id="content">
+
+			<%= yield %>
+
+			</div>
+
+			<div class="clear">
+
+			</div>
+
+		</div>
+
+		<div id="footer">
+
+			<p id="copyright"> &copy; lynda.com / Bilal Abbas </p>
+
+		</div>
+
+
+	</body>
+
+</html>
